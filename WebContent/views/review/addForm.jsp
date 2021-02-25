@@ -147,7 +147,7 @@
 			<tr>
 			<td width="77%">
 			<div class="">
-				<form class="form-horizontal" action="${pageContext.request.contextPath }/AddReviewController?p_num=<%=request.getParameter("p_num") %>&o_num=<%=request.getParameter("o_num") %>"	<%-- 태수 --%>   
+				<form class="form-horizontal" action="${pageContext.request.contextPath }/AddReviewController?p_num=<%=request.getParameter("p_num") %>&o_num=<%=request.getParameter("o_num") %>"	
 				name="reviewform" enctype="multipart/form-data" method="post" >
 				<fieldset>
 

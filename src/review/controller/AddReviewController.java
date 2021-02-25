@@ -43,7 +43,7 @@ public class AddReviewController extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		
-		int p_num = Integer.parseInt(request.getParameter("p_num"));	// 태수
+		int p_num = Integer.parseInt(request.getParameter("p_num"));
 		
 		System.out.println("AddReviewController들어감");
 		
@@ -56,24 +56,23 @@ public class AddReviewController extends HttpServlet {
 	    review.setM_id(m_id);
 //	    review.setNum(service.makeNum());
 	    
-//	    int num = service.makeNum();	// 태수
-//	    productorder.service.Service service_order = new productorder.service.ServiceImpl();	// 태수
-//	    ProductOrderVO o = service_order.getOrder(num);	// 태수
-//	    review.setP_num(o.getP_num());	// 태수
+//	    int num = service.makeNum();
+//	    productorder.service.Service service_order = new productorder.service.ServiceImpl();
+//	    ProductOrderVO o = service_order.getOrder(num);
+//	    review.setP_num(o.getP_num());
 	    review.setP_num(p_num);
 	    
 //	    review.setContent(request.getParameter("message"));
-////		review.setRate(Double.parseDouble(request.getParameter("rate")));	// 태수
-//	    review.setRate(Integer.parseInt(request.getParameter("rate")));		// 태수
+////		review.setRate(Double.parseDouble(request.getParameter("rate")));	
+//	    review.setRate(Integer.parseInt(request.getParameter("rate")));
 //		review.setImg(request.getParameter("r_img"));
 
 	    String review_img = "";
 	    int maxSize =1024 *1024 *10;
 		MultipartRequest multi = null;
 		
-//		TODO 나중에 경로 이걸로 바꾸셈
+
 		String uploadPath = "C:\\Web-kitri\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\review_img";
-//		String uploadPath = "C:\\JSPClass\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\upload_img";
 		
 		try {
 			// request,파일저장경로,용량,인코딩타입,중복파일명에 대한 기본 정책
@@ -98,9 +97,7 @@ public class AddReviewController extends HttpServlet {
 			e.printStackTrace();
 		}
 
-//		TODO 나중에 경로 이걸로 바꾸셈
-		review.setImg("/review_img/" + review_img);			// 태수
-//		review.setImg("/upload_img/" + review_img);			// 태수
+		review.setImg("/review_img/" + review_img);
 
 		service.add(review);	
 
@@ -115,8 +112,8 @@ public class AddReviewController extends HttpServlet {
 		
 		service_po.editPoint(m_id, o_num);
 		
-//		RequestDispatcher dispatcher = request.getRequestDispatcher("/views/review/myReviewList.jsp");	// 태수
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/ListReviewController");			// 태수
+//		RequestDispatcher dispatcher = request.getRequestDispatcher("/views/review/myReviewList.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/ListReviewController");	
 		dispatcher.forward(request, response);
 	}
 
