@@ -8,9 +8,3 @@
 * Apache Tomcat 9.0
 * Bootstrap
 
-### 구성원
-
-* 권혁민
-* 서태수
-* 연다경
-* 장선정
